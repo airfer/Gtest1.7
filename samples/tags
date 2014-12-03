@@ -1,0 +1,166 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CalculatePrimesUpTo	prime_tables.h	/^  void CalculatePrimesUpTo(int max) {$/;"	f	class:PreCalculatedPrimeTable
+Clear	sample3-inl.h	/^  void Clear() {$/;"	f	class:Queue
+CloneCString	sample2.cc	/^const char* MyString::CloneCString(const char* a_c_string) {$/;"	f	class:MyString
+Counter	sample4.h	/^  Counter() : counter_(0) {}$/;"	f	class:Counter
+Counter	sample4.h	/^class Counter {$/;"	c
+CreateOnTheFlyPrimeTable	sample7_unittest.cc	/^PrimeTable* CreateOnTheFlyPrimeTable() {$/;"	f
+CreatePreCalculatedPrimeTable	sample7_unittest.cc	/^PrimeTable* CreatePreCalculatedPrimeTable() {$/;"	f
+CreatePrimeTable	sample6_unittest.cc	/^PrimeTable* CreatePrimeTable<OnTheFlyPrimeTable>() {$/;"	f
+CreatePrimeTable	sample6_unittest.cc	/^PrimeTable* CreatePrimeTable<PreCalculatedPrimeTable>() {$/;"	f
+CreatePrimeTableFunc	sample7_unittest.cc	/^typedef PrimeTable* CreatePrimeTableFunc();$/;"	t	file:
+Dequeue	sample3-inl.h	/^  E* Dequeue() {$/;"	f	class:Queue
+Double	sample3_unittest.cc	/^  static int Double(int n) {$/;"	f	class:QueueTest
+Enqueue	sample3-inl.h	/^  void Enqueue(const E& element) {$/;"	f	class:Queue
+Factorial	sample1.cc	/^int Factorial(int n) {$/;"	f
+GTEST_SAMPLES_PRIME_TABLES_H_	prime_tables.h	38;"	d
+GTEST_SAMPLES_SAMPLE1_H_	sample1.h	35;"	d
+GTEST_SAMPLES_SAMPLE2_H_	sample2.h	35;"	d
+GTEST_SAMPLES_SAMPLE3_INL_H_	sample3-inl.h	35;"	d
+GTEST_SAMPLES_SAMPLE4_H_	sample4.h	35;"	d
+GetNextPrime	prime_tables.h	/^  virtual int GetNextPrime(int p) const {$/;"	f	class:OnTheFlyPrimeTable
+GetNextPrime	prime_tables.h	/^  virtual int GetNextPrime(int p) const {$/;"	f	class:PreCalculatedPrimeTable
+GetNextPrime	sample8_unittest.cc	/^  virtual int GetNextPrime(int p) const {$/;"	f	class:HybridPrimeTable
+Head	sample3-inl.h	/^  QueueNode<E>* Head() { return head_; }$/;"	f	class:Queue
+Head	sample3-inl.h	/^  const QueueNode<E>* Head() const { return head_; }$/;"	f	class:Queue
+HybridPrimeTable	sample8_unittest.cc	/^  HybridPrimeTable(bool force_on_the_fly, int max_precalculated)$/;"	f	class:HybridPrimeTable
+HybridPrimeTable	sample8_unittest.cc	/^class HybridPrimeTable : public PrimeTable {$/;"	c	file:
+Implementations	sample6_unittest.cc	/^typedef Types<OnTheFlyPrimeTable, PreCalculatedPrimeTable> Implementations;$/;"	t	file:
+Increment	sample4.cc	/^int Counter::Increment() {$/;"	f	class:Counter
+IntegerFunctionTest	sample5_unittest.cc	/^class IntegerFunctionTest : public QuickTest {$/;"	c	file:
+IsPrime	prime_tables.h	/^  virtual bool IsPrime(int n) const {$/;"	f	class:OnTheFlyPrimeTable
+IsPrime	prime_tables.h	/^  virtual bool IsPrime(int n) const {$/;"	f	class:PreCalculatedPrimeTable
+IsPrime	sample1.cc	/^bool IsPrime(int n) {$/;"	f
+IsPrime	sample8_unittest.cc	/^  virtual bool IsPrime(int n) const {$/;"	f	class:HybridPrimeTable
+Last	sample3-inl.h	/^  QueueNode<E>* Last() { return last_; }$/;"	f	class:Queue
+Last	sample3-inl.h	/^  const QueueNode<E>* Last() const { return last_; }$/;"	f	class:Queue
+LeakChecker	sample10_unittest.cc	/^class LeakChecker : public EmptyTestEventListener {$/;"	c	namespace:__anon1	file:
+Length	sample2.h	/^  size_t Length() const {$/;"	f	class:MyString
+Map	sample3-inl.h	/^  Queue* Map(F function) const {$/;"	f	class:Queue
+MapTester	sample3_unittest.cc	/^  void MapTester(const Queue<int> * q) {$/;"	f	class:QueueTest
+MyString	sample2.h	/^  MyString() : c_string_(NULL) {}$/;"	f	class:MyString
+MyString	sample2.h	/^  MyString(const MyString& string) : c_string_(NULL) {$/;"	f	class:MyString
+MyString	sample2.h	/^  explicit MyString(const char* a_c_string) : c_string_(NULL) {$/;"	f	class:MyString
+MyString	sample2.h	/^class MyString {$/;"	c
+OnTestEnd	sample10_unittest.cc	/^  virtual void OnTestEnd(const TestInfo& \/* test_info *\/) {$/;"	f	class:__anon1::LeakChecker	file:
+OnTestEnd	sample9_unittest.cc	/^  virtual void OnTestEnd(const TestInfo& test_info) {$/;"	f	class:__anon2::TersePrinter	file:
+OnTestPartResult	sample9_unittest.cc	/^  virtual void OnTestPartResult(const TestPartResult& test_part_result) {$/;"	f	class:__anon2::TersePrinter	file:
+OnTestProgramEnd	sample9_unittest.cc	/^  virtual void OnTestProgramEnd(const UnitTest& unit_test) {$/;"	f	class:__anon2::TersePrinter	file:
+OnTestProgramStart	sample9_unittest.cc	/^  virtual void OnTestProgramStart(const UnitTest& \/* unit_test *\/) {}$/;"	f	class:__anon2::TersePrinter	file:
+OnTestStart	sample10_unittest.cc	/^  virtual void OnTestStart(const TestInfo& \/* test_info *\/) {$/;"	f	class:__anon1::LeakChecker	file:
+OnTestStart	sample9_unittest.cc	/^  virtual void OnTestStart(const TestInfo& test_info) {$/;"	f	class:__anon2::TersePrinter	file:
+OnTheFlyPrimeTable	prime_tables.h	/^class OnTheFlyPrimeTable : public PrimeTable {$/;"	c
+PreCalculatedPrimeTable	prime_tables.h	/^  explicit PreCalculatedPrimeTable(int max)$/;"	f	class:PreCalculatedPrimeTable
+PreCalculatedPrimeTable	prime_tables.h	/^class PreCalculatedPrimeTable : public PrimeTable {$/;"	c
+PrimeTable	prime_tables.h	/^class PrimeTable {$/;"	c
+PrimeTableImplementations	sample6_unittest.cc	/^    PrimeTableImplementations;$/;"	t	file:
+PrimeTableTest	sample6_unittest.cc	/^  PrimeTableTest() : table_(CreatePrimeTable<T>()) {}$/;"	f	class:PrimeTableTest
+PrimeTableTest	sample6_unittest.cc	/^class PrimeTableTest : public testing::Test {$/;"	c	file:
+PrimeTableTest	sample7_unittest.cc	/^class PrimeTableTest : public TestWithParam<CreatePrimeTableFunc*> {$/;"	c	file:
+PrimeTableTest	sample8_unittest.cc	/^class PrimeTableTest : public TestWithParam< ::std::tr1::tuple<bool, int> > {$/;"	c	file:
+PrimeTableTest2	sample6_unittest.cc	/^TYPED_TEST_CASE_P(PrimeTableTest2);$/;"	v
+PrimeTableTest2	sample6_unittest.cc	/^class PrimeTableTest2 : public PrimeTableTest<T> {$/;"	c	file:
+Print	sample4.cc	/^void Counter::Print() const {$/;"	f	class:Counter
+Queue	sample3-inl.h	/^  Queue() : head_(NULL), last_(NULL), size_(0) {}$/;"	f	class:Queue
+Queue	sample3-inl.h	/^class Queue {$/;"	c
+QueueNode	sample3-inl.h	/^  explicit QueueNode(const E& an_element) : element_(an_element), next_(NULL) {}$/;"	f	class:QueueNode
+QueueNode	sample3-inl.h	/^class QueueNode {$/;"	c
+QueueTest	sample3_unittest.cc	/^class QueueTest : public testing::Test {$/;"	c	file:
+QueueTest	sample5_unittest.cc	/^class QueueTest : public QuickTest {$/;"	c	file:
+QuickTest	sample5_unittest.cc	/^class QuickTest : public testing::Test {$/;"	c	file:
+Set	sample2.cc	/^void MyString::Set(const char* a_c_string) {$/;"	f	class:MyString
+SetUp	sample3_unittest.cc	/^  virtual void SetUp() {$/;"	f	class:QueueTest
+SetUp	sample5_unittest.cc	/^  virtual void SetUp() {$/;"	f	class:QueueTest
+SetUp	sample5_unittest.cc	/^  virtual void SetUp() {$/;"	f	class:QuickTest
+SetUp	sample7_unittest.cc	/^  virtual void SetUp() { table_ = (*GetParam())(); }$/;"	f	class:PrimeTableTest
+SetUp	sample8_unittest.cc	/^  virtual void SetUp() {$/;"	f	class:PrimeTableTest
+Size	sample3-inl.h	/^  size_t Size() const { return size_; }$/;"	f	class:Queue
+TEST	sample10_unittest.cc	/^TEST(ListenersTest, DoesNotLeak) {$/;"	f	namespace:__anon1
+TEST	sample10_unittest.cc	/^TEST(ListenersTest, LeaksWater) {$/;"	f	namespace:__anon1
+TEST	sample1_unittest.cc	/^TEST(FactorialTest, Negative) {$/;"	f
+TEST	sample1_unittest.cc	/^TEST(FactorialTest, Positive) {$/;"	f
+TEST	sample1_unittest.cc	/^TEST(FactorialTest, Zero) {$/;"	f
+TEST	sample1_unittest.cc	/^TEST(IsPrimeTest, Negative) {$/;"	f
+TEST	sample1_unittest.cc	/^TEST(IsPrimeTest, Positive) {$/;"	f
+TEST	sample1_unittest.cc	/^TEST(IsPrimeTest, Trivial) {$/;"	f
+TEST	sample2_unittest.cc	/^TEST(MyString, ConstructorFromCString) {$/;"	f
+TEST	sample2_unittest.cc	/^TEST(MyString, CopyConstructor) {$/;"	f
+TEST	sample2_unittest.cc	/^TEST(MyString, DefaultConstructor) {$/;"	f
+TEST	sample2_unittest.cc	/^TEST(MyString, Set) {$/;"	f
+TEST	sample4_unittest.cc	/^TEST(Counter, Increment) {$/;"	f
+TEST	sample7_unittest.cc	/^TEST(DummyTest, ValueParameterizedTestsAreNotSupportedOnThisPlatform) {}$/;"	f
+TEST	sample8_unittest.cc	/^TEST(DummyTest, CombineIsNotSupportedOnThisPlatform) {}$/;"	f
+TEST	sample9_unittest.cc	/^TEST(CustomOutputTest, Fails) {$/;"	f	namespace:__anon2
+TEST	sample9_unittest.cc	/^TEST(CustomOutputTest, PrintsMessage) {$/;"	f	namespace:__anon2
+TEST	sample9_unittest.cc	/^TEST(CustomOutputTest, Succeeds) {$/;"	f	namespace:__anon2
+TEST_F	sample3_unittest.cc	/^TEST_F(QueueTest, DefaultConstructor) {$/;"	f
+TEST_F	sample3_unittest.cc	/^TEST_F(QueueTest, Dequeue) {$/;"	f
+TEST_F	sample3_unittest.cc	/^TEST_F(QueueTest, Map) {$/;"	f
+TEST_F	sample5_unittest.cc	/^TEST_F(IntegerFunctionTest, Factorial) {$/;"	f
+TEST_F	sample5_unittest.cc	/^TEST_F(IntegerFunctionTest, IsPrime) {$/;"	f
+TEST_F	sample5_unittest.cc	/^TEST_F(QueueTest, DefaultConstructor) {$/;"	f
+TEST_F	sample5_unittest.cc	/^TEST_F(QueueTest, Dequeue) {$/;"	f
+TEST_P	sample7_unittest.cc	/^TEST_P(PrimeTableTest, CanGetNextPrime) {$/;"	f
+TEST_P	sample7_unittest.cc	/^TEST_P(PrimeTableTest, ReturnsFalseForNonPrimes) {$/;"	f
+TEST_P	sample7_unittest.cc	/^TEST_P(PrimeTableTest, ReturnsTrueForPrimes) {$/;"	f
+TEST_P	sample8_unittest.cc	/^TEST_P(PrimeTableTest, CanGetNextPrime) {$/;"	f
+TEST_P	sample8_unittest.cc	/^TEST_P(PrimeTableTest, ReturnsFalseForNonPrimes) {$/;"	f
+TEST_P	sample8_unittest.cc	/^TEST_P(PrimeTableTest, ReturnsTrueForPrimes) {$/;"	f
+TYPED_TEST	sample6_unittest.cc	/^TYPED_TEST(PrimeTableTest, CanGetNextPrime) {$/;"	f
+TYPED_TEST	sample6_unittest.cc	/^TYPED_TEST(PrimeTableTest, ReturnsFalseForNonPrimes) {$/;"	f
+TYPED_TEST	sample6_unittest.cc	/^TYPED_TEST(PrimeTableTest, ReturnsTrueForPrimes) {$/;"	f
+TYPED_TEST_P	sample6_unittest.cc	/^TYPED_TEST_P(PrimeTableTest2, CanGetNextPrime) {$/;"	f
+TYPED_TEST_P	sample6_unittest.cc	/^TYPED_TEST_P(PrimeTableTest2, ReturnsFalseForNonPrimes) {$/;"	f
+TYPED_TEST_P	sample6_unittest.cc	/^TYPED_TEST_P(PrimeTableTest2, ReturnsTrueForPrimes) {$/;"	f
+TearDown	sample5_unittest.cc	/^  virtual void TearDown() {$/;"	f	class:QuickTest
+TearDown	sample7_unittest.cc	/^  virtual void TearDown() {$/;"	f	class:PrimeTableTest
+TearDown	sample8_unittest.cc	/^  virtual void TearDown() {$/;"	f	class:PrimeTableTest
+TersePrinter	sample9_unittest.cc	/^class TersePrinter : public EmptyTestEventListener {$/;"	c	namespace:__anon2	file:
+Water	sample10_unittest.cc	/^class Water {$/;"	c	namespace:__anon1	file:
+allocated	sample10_unittest.cc	/^  static int allocated() { return allocated_; }$/;"	f	class:__anon1::Water
+allocated_	sample10_unittest.cc	/^  static int allocated_;$/;"	m	class:__anon1::Water	file:
+allocated_	sample10_unittest.cc	/^int Water::allocated_ = 0;$/;"	m	class:__anon1::Water	file:
+c_string	sample2.h	/^  const char* c_string() const { return c_string_; }$/;"	f	class:MyString
+c_string_	sample2.h	/^  const char* c_string_;$/;"	m	class:MyString
+counter_	sample4.h	/^  int counter_;$/;"	m	class:Counter
+element	sample3-inl.h	/^  const E& element() const { return element_; }$/;"	f	class:QueueNode
+element_	sample3-inl.h	/^  E element_;$/;"	m	class:QueueNode
+head_	sample3-inl.h	/^  QueueNode<E>* head_;  \/\/ The first node of the queue.$/;"	m	class:Queue
+initially_allocated_	sample10_unittest.cc	/^  int initially_allocated_;$/;"	m	class:__anon1::LeakChecker	file:
+is_prime_	prime_tables.h	/^  bool* const is_prime_;$/;"	m	class:PreCalculatedPrimeTable
+is_prime_size_	prime_tables.h	/^  const int is_prime_size_;$/;"	m	class:PreCalculatedPrimeTable
+kHelloString	sample2_unittest.cc	/^const char kHelloString[] = "Hello, world!";$/;"	v
+last_	sample3-inl.h	/^  QueueNode<E>* last_;  \/\/ The last node of the queue.$/;"	m	class:Queue
+main	sample10_unittest.cc	/^int main(int argc, char **argv) {$/;"	f
+main	sample9_unittest.cc	/^int main(int argc, char **argv) {$/;"	f
+max_precalculated_	sample8_unittest.cc	/^  int max_precalculated_;$/;"	m	class:HybridPrimeTable	file:
+next	sample3-inl.h	/^  QueueNode* next() { return next_; }$/;"	f	class:QueueNode
+next	sample3-inl.h	/^  const QueueNode* next() const { return next_; }$/;"	f	class:QueueNode
+next_	sample3-inl.h	/^  QueueNode* next_;$/;"	m	class:QueueNode
+on_the_fly_impl_	sample8_unittest.cc	/^  OnTheFlyPrimeTable* on_the_fly_impl_;$/;"	m	class:HybridPrimeTable	file:
+operator delete	sample10_unittest.cc	/^  void operator delete(void* block, size_t \/* allocation_size *\/) {$/;"	f	class:__anon1::Water
+operator new	sample10_unittest.cc	/^  void* operator new(size_t allocation_size) {$/;"	f	class:__anon1::Water
+precalc_impl_	sample8_unittest.cc	/^  PreCalculatedPrimeTable* precalc_impl_;$/;"	m	class:HybridPrimeTable	file:
+q0_	sample3_unittest.cc	/^  Queue<int> q0_;$/;"	m	class:QueueTest	file:
+q0_	sample5_unittest.cc	/^  Queue<int> q0_;$/;"	m	class:QueueTest	file:
+q1_	sample3_unittest.cc	/^  Queue<int> q1_;$/;"	m	class:QueueTest	file:
+q1_	sample5_unittest.cc	/^  Queue<int> q1_;$/;"	m	class:QueueTest	file:
+q2_	sample3_unittest.cc	/^  Queue<int> q2_;$/;"	m	class:QueueTest	file:
+q2_	sample5_unittest.cc	/^  Queue<int> q2_;$/;"	m	class:QueueTest	file:
+size_	sample3-inl.h	/^  size_t size_;  \/\/ The number of elements in the queue.$/;"	m	class:Queue
+start_time_	sample5_unittest.cc	/^  time_t start_time_;$/;"	m	class:QuickTest	file:
+table_	sample6_unittest.cc	/^  PrimeTable* const table_;$/;"	m	class:PrimeTableTest	file:
+table_	sample7_unittest.cc	/^  PrimeTable* table_;$/;"	m	class:PrimeTableTest	file:
+table_	sample8_unittest.cc	/^  HybridPrimeTable* table_;$/;"	m	class:PrimeTableTest	file:
+~HybridPrimeTable	sample8_unittest.cc	/^  virtual ~HybridPrimeTable() {$/;"	f	class:HybridPrimeTable
+~MyString	sample2.h	/^  ~MyString() { delete[] c_string_; }$/;"	f	class:MyString
+~PreCalculatedPrimeTable	prime_tables.h	/^  virtual ~PreCalculatedPrimeTable() { delete[] is_prime_; }$/;"	f	class:PreCalculatedPrimeTable
+~PrimeTable	prime_tables.h	/^  virtual ~PrimeTable() {}$/;"	f	class:PrimeTable
+~PrimeTableTest	sample6_unittest.cc	/^  virtual ~PrimeTableTest() { delete table_; }$/;"	f	class:PrimeTableTest
+~PrimeTableTest	sample7_unittest.cc	/^  virtual ~PrimeTableTest() { delete table_; }$/;"	f	class:PrimeTableTest
+~Queue	sample3-inl.h	/^  ~Queue() { Clear(); }$/;"	f	class:Queue
