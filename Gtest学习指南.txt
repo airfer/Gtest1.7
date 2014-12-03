@@ -5,10 +5,19 @@
 一、构建指导以及Makefile解析
 
 （1）构建指导
-     在README文件中，给出了多种项目的构建指导方法，其中最常用的就是通用构建指导，其细节请参考README文件（115行）。一般来说都会将其构建的方法写入Makefile文件中，以便以后重复调用。
+       在README文件中，给出了多种项目的构建指导方法，其中最常用的就是通用构建指导，
+    其细节请参考README文件（115行）。一般来说都会将其构建的方法写入Makefile文件中，
+    以便以后重复调用。
 
 （2）Makefile文件样例解析
-     这里说的Makefile样例，在目录../make下，其下有十个文件，分别为Makefile1至Makefile10,每一个Makefile对应与目录 ../samples下面的sample_unitteset.cc 文件，如果想编译运行那一个文件，只须去掉Makefile后的数字即可，比如将Makefile3 变为 Makefile。
+       这里说的Makefile样例，在目录../make下，其下有十个文件，分别为Makefile1至Makefile10,
+    每一个Makefile对应与目录 ../samples下面的sample_unitteset.cc 文件，如果想编译运行那 一
+    个文件，只须去掉Makefile后的数字即可，比如将Makefile3 变为 Makefile。
 
-     Makefile编写规则不熟悉的话，可以自行百度学习，在这里说一些修改的方法。以Makefile1为例，参见第79行，sample1.o 是编译后的目标文件，82行的sample1_unittest.o 为根据单元测试框架编译后所生成的目标文件，sample1_unittest 则为链接后生成的可执行文件。如果在gtest下编辑自己的程序，只需要修改以上所述的部分即可，但是如果将自己所写程序放在其他的位置下，则需要修改第22行的GTEST_DIR 和第25行的 USER_DIR。具体编写过程中出现的问题，还需要根据实际情况判断。
+        Makefile编写规则不熟悉的话，可以自行百度学习，在这里说一些修改的方法。以Makefile1为
+     例，参见第79行，sample1.o 是编译后的目标文件，82行的sample1_unittest.o 为根据单元测试
+     框架编译后所生成的目标文件，sample1_unittest 则为链接后生成的可执行文件。如果在gtest下
+     编辑自己的程序，只需要修改以上所述的部分即可，但是如果将自己所写程序放在其他的位置下则
+     需要修改第22行的GTEST_DIR 和第25行的 USER_DIR。具体编写过程中出现的问题，还需要根据实际
+     情况判断。
 
