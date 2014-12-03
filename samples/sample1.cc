@@ -28,7 +28,7 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 // A sample program demonstrating using Google C++ testing framework.
-//
+// 这个例子主要用于演示如何使用C++ Test 测试框架
 // Author: wan@google.com (Zhanyong Wan)
 
 #include "sample1.h"

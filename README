@@ -112,7 +112,7 @@ way to do it depends on which build system you use, and is usually
 straightforward.
 
 ### Generic Build Instructions ###
-
+###         通用构建指南       ###
 Suppose you put Google Test in directory ${GTEST_DIR}.  To build it,
 create a library build target (or a project as called by Visual Studio
 and Xcode) to compile

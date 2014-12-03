@@ -15,7 +15,14 @@
        Makefile编写规则不熟悉的话，可以自行百度学习，在这里说一些修改的方法。以Makefile1为例，参见第79行，sample1.o 是编译后的
        目标文件，82行的sample1_unittest.o 为根据单元测试框架编译后所生成的目标文件，sample1_unittest 则为链接后生成的可执行文件。
  
- （3）Makefile 编写
+（3）Makefile 编写
        如果在gtest下编辑自己的程序，只需要修改以上所述的部分即可，但是如果将自己所写程序放在其他的位置下则需要修改第22行的
        GTEST_DIR 和第25行的 USER_DIR。具体编写过程中出现的问题，还需要根据实际情况判断。
 
+二、samples 样例解析
+
+（1）sample1：用于理解最基本的测试过程
+     在sample1中，定义了两个函数：int Factorial(int n) ----用于求n的阶乘    bool IsPrime(intn)---用于判断一个数是否为质数。详情
+     见sample1.h, 具体代码实现见sample1.cc。
+
+     sample1_unittest.cc 是利用测试框架编写的测试代码，简述了如何通过3步来编写测试代码，实例代码非常清晰明了，请查看。
