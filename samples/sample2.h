@@ -38,13 +38,16 @@
 
 
 // A simple string class.
+// 简单的字符串类
 class MyString {
  private:
   const char* c_string_;
+  //复制操作符被禁用
   const MyString& operator=(const MyString& rhs);
 
  public:
   // Clones a 0-terminated C string, allocating memory using new.
+  // 克隆一个以'\0'结尾的字符串，并分配内存
   static const char* CloneCString(const char* a_c_string);
 
   ////////////////////////////////////////////////////////////
@@ -52,14 +55,17 @@ class MyString {
   // C'tors
 
   // The default c'tor constructs a NULL string.
+  // 默认构造函数
   MyString() : c_string_(NULL) {}
 
   // Constructs a MyString by cloning a 0-terminated C string.
+  // 通过clone一个以‘\0’结尾的字符串来构建MyString
   explicit MyString(const char* a_c_string) : c_string_(NULL) {
     Set(a_c_string);
   }
 
   // Copy c'tor
+  // 拷贝构造函数
   MyString(const MyString& string) : c_string_(NULL) {
     Set(string.c_string_);
   }
@@ -68,9 +74,12 @@ class MyString {
   //
   // D'tor.  MyString is intended to be a final class, so the d'tor
   // doesn't need to be virtual.
+  //
+  // 因为MyString作为最终类存在，所以析构函数不必为需函数
   ~MyString() { delete[] c_string_; }
 
   // Gets the 0-terminated C string this MyString object represents.
+  // 获取c_string_
   const char* c_string() const { return c_string_; }
 
   size_t Length() const {
@@ -78,6 +87,7 @@ class MyString {
   }
 
   // Sets the 0-terminated C string this MyString object represents.
+  // 设置MyString的c_string_
   void Set(const char* c_string);
 };
 

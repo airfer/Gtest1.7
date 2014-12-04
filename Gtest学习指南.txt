@@ -21,8 +21,12 @@
 
 二、samples 样例解析
 
-（1）sample1：用于理解最基本的测试过程
+（1）sample1：用于理解最基本的过程测试
      在sample1中，定义了两个函数：int Factorial(int n) ----用于求n的阶乘    bool IsPrime(intn)---用于判断一个数是否为质数。详情
      见sample1.h, 具体代码实现见sample1.cc。
 
      sample1_unittest.cc 是利用测试框架编写的测试代码，简述了如何通过3步来编写测试代码，实例代码非常清晰明了，请查看。
+
+（2）sample2：用于理解最基本的对象测试
+     在sample2中，定义了一个MyString的类，类中定义了几个方法，sample2_unittest.cc则是针对MyString这个类中的成员函数设计的单元测
+     试方法，整个测试过程非常清晰，强烈建议查看相关文件源码，其中注释解释的非常清楚。

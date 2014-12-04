@@ -28,6 +28,7 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 // A sample program demonstrating using Google C++ testing framework.
+// 主要用于实现sample1.h中MyString中定义的类
 //
 // Author: wan@google.com (Zhanyong Wan)
 

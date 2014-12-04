@@ -39,6 +39,12 @@
 // class.  You don't have to do that exactly, but it helps to keep
 // your tests organized.  You may also throw in additional tests as
 // needed.
+//
+// 这个例子将展示如何为一个具有多个成员函数的类编写较为复杂的单元测试
+//
+// 通常为你类中的每一个方法都做一次测试是一个很好的主意。虽然你并非必须
+// 要这么做，但是这样做将使你的测试集更便于管理，当然你也可以根据需要添
+// 加其他的测试集
 
 #include "sample2.h"
 #include "gtest/gtest.h"
@@ -68,6 +74,16 @@ TEST(MyString, DefaultConstructor) {
   // integer number 0 and the null pointer constant.  Unfortunately,
   // we have to live with this fact.
   //
+  //技术细节：
+  //   如果我们使用NULL，而不是static_cast<const char *>(NULL)。在断言中
+  //如果编译器为gcc3.4,它将产生一个警告。产生警告的原因是，EXPECT_EQ需要
+  //知道它参数的具体类型，以便产生错误的时候将其输出出来。由于NULL被
+  //#define定义为0，所以编译器会使用格式化函数来将其输出。然而，GCC认为
+  //NULL应该被当作指针类型，而不是int整形，所以编译器会抱怨。
+  //
+  //产生这个问题的根源是，C++对整数0以及空指针常量缺乏判别依据。不幸的是
+  //我要学会接受这个现实。
+  //
   // </TechnicalDetails>
   EXPECT_STREQ(NULL, s.c_string());
 
@@ -77,6 +93,7 @@ TEST(MyString, DefaultConstructor) {
 const char kHelloString[] = "Hello, world!";
 
 // Tests the c'tor that accepts a C string.
+// 测试构造函数
 TEST(MyString, ConstructorFromCString) {
   const MyString s(kHelloString);
   EXPECT_EQ(0, strcmp(s.c_string(), kHelloString));
@@ -85,6 +102,7 @@ TEST(MyString, ConstructorFromCString) {
 }
 
 // Tests the copy c'tor.
+// 测试拷贝构造函数
 TEST(MyString, CopyConstructor) {
   const MyString s1(kHelloString);
   const MyString s2 = s1;
@@ -92,6 +110,7 @@ TEST(MyString, CopyConstructor) {
 }
 
 // Tests the Set method.
+// 测试Set方法
 TEST(MyString, Set) {
   MyString s;
 
@@ -100,6 +119,9 @@ TEST(MyString, Set) {
 
   // Set should work when the input pointer is the same as the one
   // already in the MyString object.
+  //
+  // Set函数在输入指针与已存在于MyString对象中的指针相同时，下面的
+  // 测试才会通过
   s.Set(s.c_string());
   EXPECT_EQ(0, strcmp(s.c_string(), kHelloString));
 
