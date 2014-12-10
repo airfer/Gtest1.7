@@ -1,0 +1,2 @@
+g++ ariferMain.cpp -o airferMain -I/usr/include/python2.6 -L/usr/lib/python2.6 -lpython2.6
+
