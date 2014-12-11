@@ -1,7 +1,7 @@
 /*************************************************************************
 	> File Name: Report.cpp
-	> Author: ma6174
-	> Mail: ma6174@163.com 
+	> Author: airfer
+	> Mail: airfer@126.com 
 	> Created Time: Tue 09 Dec 2014 07:51:49 PM PST
 ************************************************************************/
 #include<iostream>
@@ -17,8 +17,8 @@ public:
         PyRun_SimpleString("import sys");
         PyRun_SimpleString("sys.path.append('./')");
     }//构造函数结束
-
-     //导入文件
+     
+    //导入文件
      int readFile(const char* fileName){
          pModule=PyImport_ImportModule("reportTest");
          if(pModule==NULL){
@@ -27,7 +27,6 @@ public:
              return 1;
          }
      }
-
     //模板初始化
     int writeInit(const char* funcName){
         //模板初始化
@@ -36,12 +35,10 @@ public:
             cout<<"[ERROR] pFunc为空指针，请检测"<<endl;
         }
         errorSign=PyEval_CallObject(pFunc,NULL);
-
         if(errorSign==NULL){
             cout<<"[ERROR] 函数调用出错，请检查"<<endl;
         }
     }
-
     //向单元格中写入数据
     int writeData(const char* funcName,int index_x, int index_y){
 
@@ -53,11 +50,9 @@ public:
         pArgs=PyTuple_New(2);
         PyTuple_SetItem(pArgs,0,Py_BuildValue("i",index_x));
         PyTuple_SetItem(pArgs,1,Py_BuildValue("i",index_y));
-
         //调用函数
         PyObject_CallObject(pFunc,pArgs);
     }
-
     //析够函数
     ~Report(){
         Py_DECREF(pModule);
@@ -73,7 +68,6 @@ private:
     PyObject *pFunc;
     PyObject *errorSign;
     PyObject *pArgs;
-
 };//Report类定义结束
 
 
