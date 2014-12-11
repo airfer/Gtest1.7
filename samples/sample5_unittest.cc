@@ -212,6 +212,7 @@ class QueueTest : public QuickTest {
 
 
 // Now, let's write tests using the QueueTest fixture.
+// 现在，让我们使用QueueTest 测试固件来写测试用例
 
 // Tests the default constructor.
 TEST_F(QueueTest, DefaultConstructor) {
