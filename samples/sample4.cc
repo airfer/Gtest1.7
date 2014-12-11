@@ -36,11 +36,13 @@
 #include "sample4.h"
 
 // Returns the current counter value, and increments it.
+// 返回当前指针的值，并自增
 int Counter::Increment() {
   return counter_++;
 }
 
 // Prints the current counter value to STDOUT.
+// 将当前指针计数打印出来
 void Counter::Print() const {
   printf("%d", counter_);
 }

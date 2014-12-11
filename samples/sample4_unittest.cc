@@ -38,6 +38,9 @@ TEST(Counter, Increment) {
 
   // EXPECT_EQ() evaluates its arguments exactly once, so they
   // can have side effects.
+  //
+  // EXPECT_EQ计算它的参数只一次，所以有额外的副作用（自增1）
+  //
 
   EXPECT_EQ(0, c.Increment());
   EXPECT_EQ(1, c.Increment());

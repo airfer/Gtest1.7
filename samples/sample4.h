@@ -28,13 +28,14 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 // A sample program demonstrating using Google C++ testing framework.
-//
+// 
 // Author: wan@google.com (Zhanyong Wan)
 
 #ifndef GTEST_SAMPLES_SAMPLE4_H_
 #define GTEST_SAMPLES_SAMPLE4_H_
 
 // A simple monotonic counter.
+// 一个简单的单例计数器
 class Counter {
  private:
   int counter_;
@@ -44,6 +45,7 @@ class Counter {
   Counter() : counter_(0) {}
 
   // Returns the current counter value, and increments it.
+  // 自增运算
   int Increment();
 
   // Prints the current counter value to STDOUT.
