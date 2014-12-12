@@ -34,6 +34,9 @@
 // value-parameterized tests. Each test in the test case has
 // a parameter that is an interface pointer to an implementation
 // tested.
+//
+// 这个例子展示了如何使用值参数化来测试接口的多重实现的共有性质，每一个测试
+// 都有一个参数，它是一个指向被测实现的接口指针
 
 // The interface and its implementations are in this header.
 #include "prime_tables.h"
@@ -50,6 +53,14 @@ using ::testing::Values;
 // instead of reusing them.  In this sample we will define a simple factory
 // function for PrimeTable objects.  We will instantiate objects in test's
 // SetUp() method and delete them in TearDown() method.
+//
+// 作为一个通用的准则，要放置当前的测试结果影响后续的测试，你应该为每一个测试
+// 创建和销毁 测试对象而不重新使用它。在这个例子中，我们为PrimeTable对象定义了
+// 一个简单的工厂函数。我们将在Setup（）函数中实例化对象，并在TearDown（）方法
+// 中销毁对象
+//
+//
+// 这里是定义了一个函数指针，接受空的参数，返回值类型为PrimeTable的指针
 typedef PrimeTable* CreatePrimeTableFunc();
 
 PrimeTable* CreateOnTheFlyPrimeTable() {
@@ -65,6 +76,11 @@ PrimeTable* CreatePreCalculatedPrimeTable() {
 // can refer to the test parameter by GetParam().  In this case, the test
 // parameter is a factory function which we call in fixture's SetUp() to
 // create and store an instance of PrimeTable.
+//
+// 在测试固件的构造函中，可以在Setup()和TearDown（）中，可以通过调用GetParam()
+// 函数来得到测试的参数。在这个测试中，测试参数是一个工厂函数，通过调用它来产
+// 生和存储PrimeTable的实例。
+//
 class PrimeTableTest : public TestWithParam<CreatePrimeTableFunc*> {
  public:
   virtual ~PrimeTableTest() { delete table_; }
@@ -110,8 +126,13 @@ TEST_P(PrimeTableTest, CanGetNextPrime) {
 // You can instantiate them in a different translation module, or even
 // instantiate them several times.
 //
+// 为了运行值参数化的测试，你需要实例它们或者将其绑定在被用于测试参数的值的列表中，
+// 你可以在不同转换模块中实例化它们，甚至可以多次实例化它们
+//
 // Here, we instantiate our tests with a list of two PrimeTable object
 // factory functions:
+// 下面是实例化过程
+//
 INSTANTIATE_TEST_CASE_P(
     OnTheFlyAndPreCalculated,
     PrimeTableTest,
