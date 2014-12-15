@@ -151,7 +151,7 @@ int main(int argc, char **argv) {
     // 并且也不会打印出任何结果。由于这个操作将监听者的拥有权转移到调用者，所以我们
     // 也要将其删除。
     //
-    delete listeners.Release(listeners.default_result_printer());
+    //delete listeners.Release(listeners.default_result_printer());
 
     // Adds the custom output listener to the list. It will now receive
     // events from Google Test and print the alternative output. We don't
