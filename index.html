@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Gtest1.7单元测试框架学习指南 : C++单元测试框架">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Gtest1.7单元测试框架学习指南</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/airfer/Gtest1.7">View on GitHub</a>
+
+          <h1 id="project_title">Gtest1.7单元测试框架学习指南</h1>
+          <h2 id="project_tagline">C++单元测试框架</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/airfer/Gtest1.7/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/airfer/Gtest1.7/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h4>
+<a id="一构建指导以及makefile解析" class="anchor" href="#%E4%B8%80%E6%9E%84%E5%BB%BA%E6%8C%87%E5%AF%BC%E4%BB%A5%E5%8F%8Amakefile%E8%A7%A3%E6%9E%90" aria-hidden="true"><span class="octicon octicon-link"></span></a>一、构建指导以及Makefile解析</h4>
+
+<h5>
+<a id="1-构建指导" class="anchor" href="#1-%E6%9E%84%E5%BB%BA%E6%8C%87%E5%AF%BC" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. 构建指导</h5>
+
+<p>在README文件中，给出了多种项目的构建指导方法，其中最常用的就是通用构建指导，其细节请参考README文件（115行）。一般来说都会将其构建的方法写入Makefile文件中，以便以后重复调用。</p>
+
+<h5>
+<a id="2-makefile文件样例解析" class="anchor" href="#2-makefile%E6%96%87%E4%BB%B6%E6%A0%B7%E4%BE%8B%E8%A7%A3%E6%9E%90" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. Makefile文件样例解析</h5>
+
+<p>这里说的Makefile样例，在目录../make下，其下有十个文件，分别为Makefile1至Makefile10,每一个Makefile对应与目录 ../samples下面的    sample_unitteset.cc 文件，如果想编译运行那 一个文件，只须去掉Makefile后的数字即可，比如将Makefile3 变为 Makefile。    </p>
+
+<p>Makefile编写规则不熟悉的话，可以自行百度学习，在这里说一些修改的方法。以Makefile1为例，参见第79行，sample1.o 是编译后的目标文件，82行的sample1_unittest.o 为根据单元测试框架编译后所生成的目标文件，sample1_unittest 则为链接后生成的可执行文件。</p>
+
+<h5>
+<a id="3-makefile-编写" class="anchor" href="#3-makefile-%E7%BC%96%E5%86%99" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. Makefile 编写</h5>
+
+<p>如果在gtest下编辑自己的程序，只需要修改以上所述的部分即可，但是如果将自己所写程序放在其他的位置下则需要修改第22行的GTEST_DIR 和第25行的 USER_DIR。具体编写过程中出现的问题，还需要根据实际情况判断。    </p>
+
+<h4>
+<a id="二samples-样例解析" class="anchor" href="#%E4%BA%8Csamples-%E6%A0%B7%E4%BE%8B%E8%A7%A3%E6%9E%90" aria-hidden="true"><span class="octicon octicon-link"></span></a>二、samples 样例解析</h4>
+
+<h5>
+<a id="1-sample1用于理解最基本的过程测试" class="anchor" href="#1-sample1%E7%94%A8%E4%BA%8E%E7%90%86%E8%A7%A3%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E8%BF%87%E7%A8%8B%E6%B5%8B%E8%AF%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. sample1：用于理解最基本的过程测试</h5>
+
+<p>在sample1中，定义了两个函数：int Factorial(int n) ----用于求n的阶乘    bool IsPrime(intn)---用于判断一个数是否为质数。详情见sample1.h, 具体代码实现见sample1.cc。     </p>
+
+<p>sample1_unittest.cc 是利用测试框架编写的测试代码，简述了如何通过3步来编写测试代码，实例代码非常清晰明了，请查看</p>
+
+<h5>
+<a id="2-sample2用于理解最基本的对象测试" class="anchor" href="#2-sample2%E7%94%A8%E4%BA%8E%E7%90%86%E8%A7%A3%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%AF%B9%E8%B1%A1%E6%B5%8B%E8%AF%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. sample2：用于理解最基本的对象测试</h5>
+
+<p>在sample2中，定义了一个MyString的类，类中定义了几个方法，sample2_unittest.cc则是针对MyString这个类中的成员函数设计的单元测试方法，整个测试过程非常清晰，强烈建议查看相关文件源码，其中注释解释的非常清楚。</p>
+
+<h5>
+<a id="3-sample3-用于理解测试框架的一个高级特性测试固件" class="anchor" href="#3-sample3-%E7%94%A8%E4%BA%8E%E7%90%86%E8%A7%A3%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E7%9A%84%E4%B8%80%E4%B8%AA%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7%E6%B5%8B%E8%AF%95%E5%9B%BA%E4%BB%B6" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. sample3: 用于理解测试框架的一个高级特性，测试固件</h5>
+
+<p>在sample3中，首先定义了一个基于单链表的队列，然后定义了对队列操作的一系列方法。而sample3_unittest.cc则对队列中定义的函数进行测试，测试过程非常简洁，翻译已添加，请查看</p>
+
+<h5>
+<a id="4-sample4-理解基本性质" class="anchor" href="#4-sample4-%E7%90%86%E8%A7%A3%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. sample4: 理解基本性质</h5>
+
+<p>定义了一个自增运算，在测试用例中调用，难度较低，翻译已添加。</p>
+
+<h5>
+<a id="5-sample5-理解测试固件与超级测试固件之间的不同" class="anchor" href="#5-sample5-%E7%90%86%E8%A7%A3%E6%B5%8B%E8%AF%95%E5%9B%BA%E4%BB%B6%E4%B8%8E%E8%B6%85%E7%BA%A7%E6%B5%8B%E8%AF%95%E5%9B%BA%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E4%B8%8D%E5%90%8C" aria-hidden="true"><span class="octicon octicon-link"></span></a>5. sample5: 理解测试固件与超级测试固件之间的不同</h5>
+
+<p>在sample4中，我们可以定义超级测试固件，然后将我们所需要的测试固件从超级测试固件中派生。sample4_unittest.cc中定义了一个测试时间的函数，所以测试用例的执行时间都可以被检测到。     </p>
+
+<p>我们可以自己从超级固件中派生出我们自己的测试固件，然后在其中添加我们自己的逻辑，测试的过程清晰明了，翻译已添加，请查看</p>
+
+<h5>
+<a id="6-sample6-阐述了如何测试相同的接口不同实现的公共性质" class="anchor" href="#6-sample6-%E9%98%90%E8%BF%B0%E4%BA%86%E5%A6%82%E4%BD%95%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%90%8C%E7%9A%84%E6%8E%A5%E5%8F%A3%E4%B8%8D%E5%90%8C%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%85%AC%E5%85%B1%E6%80%A7%E8%B4%A8" aria-hidden="true"><span class="octicon octicon-link"></span></a>6. sample6: 阐述了如何测试相同的接口不同实现的公共性质</h5>
+
+<p>在sample6中，主要讲述了两种测试方法，这属于GoogleTest比较高级的性质。第一种是类型测试，这是在你知道所有的类型参数的情况下可以使用到的。     </p>
+
+<p>第二种是类型参数化测试，使用的场景是你所知道的类型参数不完全，或者说以后可能会添加新的类型参数，这种情况下需要设计类似模板的机制，在后续使用上只需要添加参数列表就可以了。      </p>
+
+<p>这个例子代码较多，不过对文件的解释很清楚，解释已添加，有什么不对的地方望指正。</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Gtest1.7单元测试框架学习指南 maintained by <a href="https://github.com/airfer">airfer</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
