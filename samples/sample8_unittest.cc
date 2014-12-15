@@ -32,8 +32,13 @@
 // This sample shows how to test code relying on some global flag variables.
 // Combine() helps with generating all possible combinations of such flags,
 // and each test is given one combination as a parameter.
+//
+// 这个例子展示了如何测试依赖全局标志变量的代码。combine（）帮助产生对于全局标志变量的
+// 所有可能的组合，每一个测试都给予所有组合中的一个作为参数。
 
 // Use class definitions to test from this header.
+//
+//
 #include "prime_tables.h"
 
 #include "gtest/gtest.h"
@@ -47,6 +52,12 @@
 // appropriate under the circumstances. But in low memory conditions, it can be
 // told to instantiate without PrecalcPrimeTable instance at all and use only
 // OnTheFlyPrimeTable.
+//
+// 假设，我们将要引进一种新的、改进的质数表实现，这个质数表的实现结合了PrecalcPrimeTable
+// 实现的速度，以及OnTheFlayPrimeTable的灵活性。在这个新的实现中，我们将实例化以上的两种
+// 实现，但是在使用时，将根据应用的场景选择其中的一种。在较低内存的情况下，我们将不实例化
+// PrecalPrimeTable,而只使用OnTheFlyPrimeTable
+//
 class HybridPrimeTable : public PrimeTable {
  public:
   HybridPrimeTable(bool force_on_the_fly, int max_precalculated)
@@ -90,6 +101,11 @@ using ::testing::Combine;
 // PreCalculatedPrimeTable disabled. We do this by defining fixture which will
 // accept different combinations of parameters for instantiating a
 // HybridPrimeTable instance.
+//
+// 如果要覆盖HybridPrimeTable所有的代码路径，我们必须考虑到PreCalculatedPrimeTable容量大小
+// 以及PreCalculatedPrime是否可以使用这个两个因素。我们定义一个测试固件，这个测试固件将接受
+// 不同的参数组合用来实例化HybridPrimeTable
+//
 class PrimeTableTest : public TestWithParam< ::std::tr1::tuple<bool, int> > {
  protected:
   virtual void SetUp() {
@@ -98,7 +114,8 @@ class PrimeTableTest : public TestWithParam< ::std::tr1::tuple<bool, int> > {
     // bool force_on_the_fly;
     // int max_precalculated;
     // tie(force_on_the_fly, max_precalculated) = GetParam();
-    //
+    // 
+    // 也可以使用tie()函数来完成下面的工作
     // once the Google C++ Style Guide allows use of ::std::tr1::tie.
     //
     bool force_on_the_fly = ::std::tr1::get<0>(GetParam());
@@ -116,8 +133,14 @@ TEST_P(PrimeTableTest, ReturnsFalseForNonPrimes) {
   // Inside the test body, you can refer to the test parameter by GetParam().
   // In this case, the test parameter is a PrimeTable interface pointer which
   // we can use directly.
+  //
+  // 在测试体内，你也可以得到测试参数通过调用GetParam()方法，在这个例子中，测试参数是一个PrimeTable
+  // 的指针，我们可以直接使用。----这个我自己也不太理解，感觉不应该是指针才对
+  //
   // Please note that you can also save it in the fixture's SetUp() method
   // or constructor and use saved copy in the tests.
+  // 请注意，你也可以在Setup()函数或者构造函数中将其保存，并在后续的测试中使用之前保存的副本
+  // 
 
   EXPECT_FALSE(table_->IsPrime(-5));
   EXPECT_FALSE(table_->IsPrime(0));
@@ -150,15 +173,23 @@ TEST_P(PrimeTableTest, CanGetNextPrime) {
 // You can instantiate them in a different translation module, or even
 // instantiate them several times.
 //
+// 为了运行值参数化测试，你需要实例化它们或者将其与一系列值的列表绑定，这些值将被用做测试参数
+// 你可以在不同的变化模块中实例化它们，甚至可以实例化它们多次
+//
 // Here, we instantiate our tests with a list of parameters. We must combine
 // all variations of the boolean flag suppressing PrecalcPrimeTable and some
 // meaningful values for tests. We choose a small value (1), and a value that
 // will put some of the tested numbers beyond the capability of the
 // PrecalcPrimeTable instance and some inside it (10). Combine will produce all
 // possible combinations.
-INSTANTIATE_TEST_CASE_P(MeaningfulTestParameters,
-                        PrimeTableTest,
-                        Combine(Bool(), Values(1,6,10)));
+//
+// 这里，我们将用一系列的参数来实例化我们的测试。我们必须考虑到所有组合的情况。bool变量表示是否
+// 限制PrecalPrimeTable,而其它的值则是对PrecalPrimeTable容量的测试，例如，可以取1表示容量很小
+// 也可以取10表示容量很大。经过组合便可以产生大量的可用参数对
+//
+INSTANTIATE_TEST_CASE_P(MeaningfulTestParameters,           //测试的名字
+                        PrimeTableTest,                     //测试固件的名字，test case
+                        Combine(Bool(), Values(1,6,10)));   //可能产生的组合
 
 #else
 
