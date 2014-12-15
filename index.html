@@ -42,14 +42,14 @@
 <h5>
 <a id="2-makefile文件样例解析" class="anchor" href="#2-makefile%E6%96%87%E4%BB%B6%E6%A0%B7%E4%BE%8B%E8%A7%A3%E6%9E%90" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. Makefile文件样例解析</h5>
 
-<p>这里说的Makefile样例，在目录../make下，其下有十个文件，分别为Makefile1至Makefile10,每一个Makefile对应与目录 ../samples下面的    sample_unitteset.cc 文件，如果想编译运行那 一个文件，只须去掉Makefile后的数字即可，比如将Makefile3 变为 Makefile。    </p>
+<p>这里说的Makefile样例，在目录../make下，其下有十个文件，分别为Makefile1至Makefile10。每一个Makefile对应与目录 ../samples下面的    sample_unitteset.cc 文件，如果想编译运行那 一个文件，只须去掉Makefile后的数字即可，比如将Makefile3 变为 Makefile。    </p>
 
-<p>Makefile编写规则不熟悉的话，可以自行百度学习，在这里说一些修改的方法。以Makefile1为例，参见第79行，sample1.o 是编译后的目标文件，82行的sample1_unittest.o 为根据单元测试框架编译后所生成的目标文件，sample1_unittest 则为链接后生成的可执行文件。</p>
+<p>Makefile编写规则不熟悉的话，可以自行百度学习，在这里说一些修改的方法。以Makefile1为例，参见第79行，sample1.o 是编译后的目标文件，82行的sample1_unittest.o 为根据单元测试框架编译后所生成的目标文件。sample1_unittest 则为链接后生成的可执行文件。</p>
 
 <h5>
 <a id="3-makefile-编写" class="anchor" href="#3-makefile-%E7%BC%96%E5%86%99" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. Makefile 编写</h5>
 
-<p>如果在gtest下编辑自己的程序，只需要修改以上所述的部分即可，但是如果将自己所写程序放在其他的位置下则需要修改第22行的GTEST_DIR 和第25行的 USER_DIR。具体编写过程中出现的问题，还需要根据实际情况判断。    </p>
+<p>如果在gtest下编辑自己的程序，只需要修改以上所述的部分即可。但是如果将自己所写程序放在其他的位置下则需要修改第22行的GTEST_DIR 和第25行的 USER_DIR。具体编写过程中出现的问题，还需要根据实际情况判断。    </p>
 
 <h4>
 <a id="二samples-样例解析" class="anchor" href="#%E4%BA%8Csamples-%E6%A0%B7%E4%BE%8B%E8%A7%A3%E6%9E%90" aria-hidden="true"><span class="octicon octicon-link"></span></a>二、samples 样例解析</h4>
@@ -59,17 +59,17 @@
 
 <p>在sample1中，定义了两个函数：int Factorial(int n) ----用于求n的阶乘    bool IsPrime(intn)---用于判断一个数是否为质数。详情见sample1.h, 具体代码实现见sample1.cc。     </p>
 
-<p>sample1_unittest.cc 是利用测试框架编写的测试代码，简述了如何通过3步来编写测试代码，实例代码非常清晰明了，请查看</p>
+<p>sample1_unittest.cc 是利用测试框架编写的测试代码，简述了如何通过3步来编写测试代码，实例代码非常清晰明了，请对照代码查看。</p>
 
 <h5>
 <a id="2-sample2用于理解最基本的对象测试" class="anchor" href="#2-sample2%E7%94%A8%E4%BA%8E%E7%90%86%E8%A7%A3%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%AF%B9%E8%B1%A1%E6%B5%8B%E8%AF%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. sample2：用于理解最基本的对象测试</h5>
 
-<p>在sample2中，定义了一个MyString的类，类中定义了几个方法，sample2_unittest.cc则是针对MyString这个类中的成员函数设计的单元测试方法，整个测试过程非常清晰，强烈建议查看相关文件源码，其中注释解释的非常清楚。</p>
+<p>在sample2中定义了一个MyString的类，类中定义了几个方法。sample2_unittest.cc则是针对MyString这个类中的成员函数设计的单元测试方法，整个测试过程非常清晰。强烈建议查看相关文件源码，其中注释解释的非常清楚。</p>
 
 <h5>
 <a id="3-sample3-用于理解测试框架的一个高级特性测试固件" class="anchor" href="#3-sample3-%E7%94%A8%E4%BA%8E%E7%90%86%E8%A7%A3%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E7%9A%84%E4%B8%80%E4%B8%AA%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7%E6%B5%8B%E8%AF%95%E5%9B%BA%E4%BB%B6" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. sample3: 用于理解测试框架的一个高级特性，测试固件</h5>
 
-<p>在sample3中，首先定义了一个基于单链表的队列，然后定义了对队列操作的一系列方法。而sample3_unittest.cc则对队列中定义的函数进行测试，测试过程非常简洁，翻译已添加，请查看</p>
+<p>在sample3中，首先定义了一个基于单链表的队列，然后定义了对队列操作的一系列方法。而sample3_unittest.cc则对队列中定义的函数进行测试，测试过程非常简洁，翻译已添加，请对照代码查看。</p>
 
 <h5>
 <a id="4-sample4-理解基本性质" class="anchor" href="#4-sample4-%E7%90%86%E8%A7%A3%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. sample4: 理解基本性质</h5>
@@ -79,32 +79,32 @@
 <h5>
 <a id="5-sample5-理解测试固件与超级测试固件之间的不同" class="anchor" href="#5-sample5-%E7%90%86%E8%A7%A3%E6%B5%8B%E8%AF%95%E5%9B%BA%E4%BB%B6%E4%B8%8E%E8%B6%85%E7%BA%A7%E6%B5%8B%E8%AF%95%E5%9B%BA%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E4%B8%8D%E5%90%8C" aria-hidden="true"><span class="octicon octicon-link"></span></a>5. sample5: 理解测试固件与超级测试固件之间的不同</h5>
 
-<p>在sample4中，我们可以定义超级测试固件，然后将我们所需要的测试固件从超级测试固件中派生。sample4_unittest.cc中定义了一个测试时间的函数，所以测试用例的执行时间都可以被检测到。     </p>
+<p>在sample4中我们可以定义超级测试固件，然后将我们所需要的测试固件从超级测试固件中派生。sample4_unittest.cc中定义了一个测试时间的函数，所以测试用例的执行时间都可以被检测到。     </p>
 
-<p>我们可以自己从超级固件中派生出我们自己的测试固件，然后在其中添加我们自己的逻辑，测试的过程清晰明了，翻译已添加，请查看</p>
+<p>我们可以自己从超级固件中派生出我们自己的测试固件，然后在其中添加我们自己的逻辑。测试的过程清晰明了，翻译已添加，请对照代码查看。</p>
 
 <h5>
 <a id="6-sample6-阐述了如何测试相同的接口不同实现的公共性质" class="anchor" href="#6-sample6-%E9%98%90%E8%BF%B0%E4%BA%86%E5%A6%82%E4%BD%95%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%90%8C%E7%9A%84%E6%8E%A5%E5%8F%A3%E4%B8%8D%E5%90%8C%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%85%AC%E5%85%B1%E6%80%A7%E8%B4%A8" aria-hidden="true"><span class="octicon octicon-link"></span></a>6. sample6: 阐述了如何测试相同的接口不同实现的公共性质</h5>
 
-<p>在sample6中，主要讲述了两种测试方法，这属于GoogleTest比较高级的性质。第一种是类型测试，这是在你知道所有的类型参数的情况下可以使用到的。     </p>
+<p>在sample6中主要讲述了两种测试方法，这属于GoogleTest比较高级的性质。第一种是类型测试，这是在你知道所有的类型参数的情况下可以使用到的。     </p>
 
-<p>第二种是类型参数化测试，使用的场景是你所知道的类型参数不完全，或者说以后可能会添加新的类型参数，这种情况下需要设计类似模板的机制，在后续使用上只需要添加参数列表就可以了。      </p>
+<p>第二种是类型参数化测试，使用的场景是你所知道的类型参数不完全或者说以后可能会添加新的类型参数。这种情况下需要设计类似模板的机制，在后续使用上只需要添加参数列表就可以了。      </p>
 
-<p>这个例子代码较多，不过对文件的解释很清楚，解释已添加，有什么不对的地方望指正。</p>
+<p>这个例子代码较多，不过对文件的解释很清楚，解释已添加如果有什么不对的地方请指正。</p>
 
 <h5>
     <a id="7-sample7-主要讲述值参数化测试" class="anchor" href="#7-sample7" aria-hidden="true"><span class="oction oction-link"></span></a>7.sample7:主要讲述值参数化测试</h5>
-<p>如果理解了sample6，再来理解sample7的值参数话应该不算困难的事情。其中要注意的是，测试固件中的参数类型为函数指针,翻译已添加</p>
+<p>如果理解了sample6，再来理解sample7的值参数话应该不算困难的事情。其中要注意的是测试固件中的参数类型为函数指针,翻译已添加，请对照源码查看。</p>
 
 <h5>8.sample8: 主要说明了如何通过调用combine函数来产生可能的组合</h5>
-<p>这个测试的关键点有两点，第一点是在定义测试固件的时候，使用了元组，其中元组的值可以通过GetParam获得。</p><p>第二点是使用Combine函数来产生所有可能的组合。这本例中，一个可以有六种组合，其中values(...)列表中的6是我自己添加用于测试的，原先只有1和10这两个参数。</p>
+<p>这个测试的关键点有两点，第一点是在定义测试固件的时候使用了元组，其中元组的值可以通过GetParam获得。</p><p>第二点是使用Combine函数来产生所有可能的组合。这本例中一个可以有六种组合，其中values(...)列表中的6是我自己添加用于测试的，原先只有1和10这两个参数。</p>
 
 <h5>9.sample9: 用例子来阐述如何定制自己的输出结果</h5>
 
-<p>在这个例子中，自定义了一种输出模式--terse_ouput,我们自己设计需要输出的信息，以及输出的格式。这个很有用，比如我想将输出的信息按照某种格式放在excel表中便于查看，通过自定义输出就可以办到。</p><p>其中需要注意的一点就是监听器控制权的转移问题，例子中介绍的比较详细，相关注释已添加，欢迎查看！</p>
+<p>在这个例子中自定义了一种输出模式--terse_ouput,我们自己设计需要输出的信息以及输出的格式。这个很有用，比如我想将输出的信息按照某种格式放在excel表中便于查看，那么通过自定义输出就可以办到。</p><p>其中需要注意的一点就是监听器控制权的转移问题，例子中介绍的比较详细相关注释已添加，请对照源码查看。</p>
 
 <h5>10.sample10: 这个例子的重点在于监听器列表中监听器的排列顺序</h5>
-</p>在例子中实现了一个检测内存是否泄漏的监听程序，其监听器的设置与sample9有很大的相似之处。整个例子的思路比较简单，重点在于监听器列表中监听器的顺序不同，其在OnStart函数以及OnEnd函数的调用顺序就会有不同，这点要非常注意。例子中的相关注释已添加。望查看！</p>
+</p>在例子中实现了一个检测内存是否泄漏的监听程序，其监听器的设置与sample9有很大的相似之处。整个例子的思路比较简单，重点在于监听器列表中监听器的顺序不同，其在OnStart函数以及OnEnd函数的调用顺序就会有不同，这点要非常注意。例子中的相关注释已添加，请对照源码查看。</p>
 
       </section>
     </div>
